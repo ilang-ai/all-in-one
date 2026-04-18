@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" width="1920" height="640" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d16"></stop>
+      <stop offset="50%" stop-color="#131e36"></stop>
+      <stop offset="100%" stop-color="#0a0d16"></stop>
+    </linearGradient>
+    <radialGradient id="goldglow" cx="78%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#d4a858" stop-opacity="0.22"></stop>
+      <stop offset="100%" stop-color="#d4a858" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="blueglow" cx="12%" cy="92%" r="55%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.5"></stop>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0"></stop>
+    </radialGradient>
+    <linearGradient id="rule" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#d4a858" stop-opacity="0"></stop>
+      <stop offset="20%" stop-color="#d4a858" stop-opacity="1"></stop>
+      <stop offset="80%" stop-color="#d4a858" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="#d4a858" stop-opacity="0"></stop>
+    </linearGradient>
+    <radialGradient id="gridmaskGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="15%" stop-color="#fff" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
+    </radialGradient>
+    <mask id="gridmask"><rect width="1920" height="640" fill="url(#gridmaskGrad)"></rect></mask>
+    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#d4a858" stroke-opacity="0.05" stroke-width="1"></path>
+    </pattern>
+
+    
+    <radialGradient id="wax" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#f0c878"></stop>
+      <stop offset="30%" stop-color="#d4a858"></stop>
+      <stop offset="70%" stop-color="#a67828"></stop>
+      <stop offset="100%" stop-color="#7a5418"></stop>
+    </radialGradient>
+    <radialGradient id="waxHighlight" cx="35%" cy="28%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"></stop>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="rimshadow" cx="50%" cy="50%" r="50%">
+      <stop offset="88%" stop-color="#000" stop-opacity="0"></stop>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.35"></stop>
+    </radialGradient>
+  </defs>
+
+  
+  <rect width="1920" height="640" fill="url(#bg)"></rect>
+  <rect width="1920" height="640" fill="url(#goldglow)"></rect>
+  <rect width="1920" height="640" fill="url(#blueglow)"></rect>
+  <rect width="1920" height="640" fill="url(#grid)" mask="url(#gridmask)"></rect>
+
+  
+  <rect x="0" y="80" width="4" height="480" fill="url(#rule)"></rect>
+
+  
+  <g font-family="&#39;JetBrains Mono&#39;, ui-monospace, Menlo, monospace" font-size="18" letter-spacing="5" fill="#d4a858" font-weight="500">
+    <text x="120" y="112">◆ I-LANG PROTOCOL</text>
+    <text x="370" y="112" fill="#d4a858" fill-opacity="0.5">/</text>
+    <text x="390" y="112">v1.2</text>
+    <text x="460" y="112" fill="#d4a858" fill-opacity="0.5">/</text>
+    <text x="480" y="112">MIT</text>
+  </g>
+
+  
+  <g>
+    <rect x="1640" y="92" width="170" height="38" fill="none" stroke="#d4a858" stroke-opacity="0.4" stroke-width="1" rx="2"></rect>
+    <text x="1725" y="117" font-family="&#39;JetBrains Mono&#39;, ui-monospace, Menlo, monospace" font-size="15" letter-spacing="4" fill="#e8ecf3" fill-opacity="0.75" text-anchor="middle" font-weight="500">SKILL.md</text>
+  </g>
+
+  
+  <text x="120" y="340" font-family="&#39;Cormorant Garamond&#39;, &#39;Playfair Display&#39;, &#39;Times New Roman&#39;, serif" font-size="200" font-weight="500" letter-spacing="-4" fill="#ffffff">Imprint<tspan fill="#d4a858" font-style="italic" font-weight="400">.</tspan></text>
+
+  
+  <text x="124" y="400" font-family="&#39;Cormorant Garamond&#39;, serif" font-size="38" font-style="italic" fill="#e8ecf3" fill-opacity="0.8">Your working imprint, portable across every agent.</text>
+
+  
+  <text x="124" y="444" font-family="&#39;JetBrains Mono&#39;, ui-monospace, Menlo, monospace" font-size="15" letter-spacing="4" fill="#d4a858" fill-opacity="0.75">IMPRINT YOURSELF ON ANY AI · ONE PROFILE · ZERO LOCK-IN</text>
+
+  
+  <line x1="120" y1="490" x2="1800" y2="490" stroke="#d4a858" stroke-opacity="0.18" stroke-width="1"></line>
+
+  
+  <g font-family="&#39;Cormorant Garamond&#39;, serif" font-size="52" fill="#d4a858" font-style="italic" font-weight="500">
+    <text x="120" y="560">11</text>
+    <text x="350" y="560">19</text>
+    <text x="560" y="560">&lt;500</text>
+  </g>
+  <g font-family="&#39;JetBrains Mono&#39;, ui-monospace, Menlo, monospace" font-size="14" letter-spacing="3" fill="#e8ecf3" fill-opacity="0.55" font-weight="500">
+    <text x="175" y="554">SKILLS MERGED</text>
+    <text x="395" y="554">AGENTS</text>
+    <text x="645" y="554">TOKENS</text>
+  </g>
+
+  
+  <g font-family="&#39;JetBrains Mono&#39;, ui-monospace, Menlo, monospace" font-size="14" letter-spacing="3.5" fill="#e8ecf3" fill-opacity="0.5" text-anchor="end" font-weight="500">
+    <text x="1800" y="554"><tspan fill="#d4a858" font-weight="600">ILANG.AI</tspan>  ·  EASTSOFT  ·  PALM MEDIA</text>
+  </g>
+
+  
+  <g transform="translate(1500 320)">
+    <ellipse cx="0" cy="168" rx="110" ry="10" fill="#000" fill-opacity="0.35"></ellipse>
+    <path d="M 0 -160&#xA;             C 92 -160, 160 -92, 160 0&#xA;             C 160 58, 136 108, 98 138&#xA;             C 76 154, 50 162, 0 162&#xA;             C -56 162, -100 144, -130 112&#xA;             C -150 90, -160 52, -160 0&#xA;             C -160 -92, -92 -160, 0 -160 Z" fill="url(#wax)"></path>
+    <circle r="160" fill="url(#rimshadow)"></circle>
+    <circle r="160" fill="url(#waxHighlight)"></circle>
+    <circle r="138" fill="none" stroke="#5c3e10" stroke-opacity="0.4" stroke-width="1.2" stroke-dasharray="2.5,4"></circle>
+    <circle r="120" fill="none" stroke="#5c3e10" stroke-opacity="0.5" stroke-width="1.8"></circle>
+    
+    <g>
+      <rect x="-44" y="-78" width="88" height="12" fill="#3a2808"></rect>
+      <rect x="-44" y="66" width="88" height="12" fill="#3a2808"></rect>
+      <rect x="-12" y="-66" width="24" height="132" fill="#3a2808"></rect>
+      <rect x="-44" y="-78" width="8" height="20" fill="#3a2808"></rect>
+      <rect x="36" y="-78" width="8" height="20" fill="#3a2808"></rect>
+      <rect x="-44" y="58" width="8" height="20" fill="#3a2808"></rect>
+      <rect x="36" y="58" width="8" height="20" fill="#3a2808"></rect>
+    </g>
+    
+    <g fill="#5c3e10" fill-opacity="0.55">
+      <circle cx="0" cy="-128" r="3.5"></circle>
+      <circle cx="128" cy="0" r="3.5"></circle>
+      <circle cx="0" cy="128" r="3.5"></circle>
+      <circle cx="-128" cy="0" r="3.5"></circle>
+    </g>
+    
+    <path id="arc" d="M -150 -20 A 150 150 0 0 1 150 -20" fill="none"></path>
+    <text font-family="&#39;JetBrains Mono&#39;, monospace" font-size="13" letter-spacing="6" fill="#3a2808" fill-opacity="0.55" font-weight="600">
+      <textPath href="#arc" startOffset="50%" text-anchor="middle">· IMPRINT · I-LANG · EST. 2026 ·</textPath>
+    </text>
+  </g>
+</svg>

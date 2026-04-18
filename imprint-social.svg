@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d16"></stop>
+      <stop offset="50%" stop-color="#131e36"></stop>
+      <stop offset="100%" stop-color="#0a0d16"></stop>
+    </linearGradient>
+    <radialGradient id="goldglow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#d4a858" stop-opacity="0.18"></stop>
+      <stop offset="100%" stop-color="#d4a858" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="wax" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#f0c878"></stop>
+      <stop offset="30%" stop-color="#d4a858"></stop>
+      <stop offset="70%" stop-color="#a67828"></stop>
+      <stop offset="100%" stop-color="#7a5418"></stop>
+    </radialGradient>
+    <radialGradient id="waxHL" cx="35%" cy="28%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"></stop>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+    </radialGradient>
+    <radialGradient id="rimshadow" cx="50%" cy="50%" r="50%">
+      <stop offset="88%" stop-color="#000" stop-opacity="0"></stop>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.35"></stop>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#d4a858" stroke-opacity="0.05"></path>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"></rect>
+  <rect width="1200" height="630" fill="url(#grid)"></rect>
+  <rect width="1200" height="630" fill="url(#goldglow)"></rect>
+
+  
+  <g transform="translate(300 315)">
+    <ellipse cx="0" cy="180" rx="120" ry="10" fill="#000" fill-opacity="0.35"></ellipse>
+    <path d="M 0 -170 C 98 -170, 170 -98, 170 0 C 170 62, 144 116, 104 148 C 80 164, 54 172, 0 172 C -58 172, -106 152, -136 118 C -158 96, -170 56, -170 0 C -170 -98, -98 -170, 0 -170 Z" fill="url(#wax)"></path>
+    <circle r="170" fill="url(#rimshadow)"></circle>
+    <circle r="170" fill="url(#waxHL)"></circle>
+    <circle r="146" fill="none" stroke="#5c3e10" stroke-opacity="0.4" stroke-width="1.3" stroke-dasharray="2.5,4"></circle>
+    <circle r="126" fill="none" stroke="#5c3e10" stroke-opacity="0.5" stroke-width="1.8"></circle>
+    <g>
+      <rect x="-46" y="-82" width="92" height="13" fill="#3a2808"></rect>
+      <rect x="-46" y="69" width="92" height="13" fill="#3a2808"></rect>
+      <rect x="-13" y="-70" width="26" height="140" fill="#3a2808"></rect>
+      <rect x="-46" y="-82" width="9" height="22" fill="#3a2808"></rect>
+      <rect x="37" y="-82" width="9" height="22" fill="#3a2808"></rect>
+      <rect x="-46" y="60" width="9" height="22" fill="#3a2808"></rect>
+      <rect x="37" y="60" width="9" height="22" fill="#3a2808"></rect>
+    </g>
+    <g fill="#5c3e10" fill-opacity="0.55">
+      <circle cx="0" cy="-134" r="3.5"></circle>
+      <circle cx="134" cy="0" r="3.5"></circle>
+      <circle cx="0" cy="134" r="3.5"></circle>
+      <circle cx="-134" cy="0" r="3.5"></circle>
+    </g>
+    <path id="arc2" d="M -158 -22 A 158 158 0 0 1 158 -22" fill="none"></path>
+    <text font-family="&#39;JetBrains Mono&#39;, monospace" font-size="13" letter-spacing="6" fill="#3a2808" fill-opacity="0.55" font-weight="600">
+      <textPath href="#arc2" startOffset="50%" text-anchor="middle">· IMPRINT · I-LANG · EST. 2026 ·</textPath>
+    </text>
+  </g>
+
+  
+  <g font-family="&#39;JetBrains Mono&#39;, monospace" font-size="15" letter-spacing="5" fill="#d4a858" font-weight="500">
+    <text x="570" y="158">◆ I-LANG PROTOCOL · v1.2</text>
+  </g>
+
+  <text x="570" y="295" font-family="&#39;Cormorant Garamond&#39;, serif" font-size="130" font-weight="500" letter-spacing="-3" fill="#ffffff">Imprint<tspan fill="#d4a858" font-style="italic" font-weight="400">.</tspan></text>
+
+  <text x="572" y="345" font-family="&#39;Cormorant Garamond&#39;, serif" font-size="26" font-style="italic" fill="#e8ecf3" fill-opacity="0.82">Your working imprint,</text>
+  <text x="572" y="378" font-family="&#39;Cormorant Garamond&#39;, serif" font-size="26" font-style="italic" fill="#e8ecf3" fill-opacity="0.82">portable across every agent.</text>
+
+  <line x1="570" y1="425" x2="1130" y2="425" stroke="#d4a858" stroke-opacity="0.2"></line>
+
+  <g font-family="&#39;Cormorant Garamond&#39;, serif" font-size="38" fill="#d4a858" font-style="italic" font-weight="500">
+    <text x="570" y="485">11</text>
+    <text x="720" y="485">19</text>
+    <text x="870" y="485">&lt;500</text>
+  </g>
+  <g font-family="&#39;JetBrains Mono&#39;, monospace" font-size="12" letter-spacing="3" fill="#e8ecf3" fill-opacity="0.55">
+    <text x="608" y="481">SKILLS</text>
+    <text x="758" y="481">AGENTS</text>
+    <text x="945" y="481">TOKENS</text>
+  </g>
+
+  <g font-family="&#39;JetBrains Mono&#39;, monospace" font-size="13" letter-spacing="3.5" fill="#e8ecf3" fill-opacity="0.55" font-weight="500">
+    <text x="570" y="560"><tspan fill="#d4a858" font-weight="600">ILANG.AI</tspan>  ·  EASTSOFT INC.  ·  PALM MEDIA  ·  CANADA</text>
+  </g>
+</svg>

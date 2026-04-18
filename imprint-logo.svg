@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    
+    <radialGradient id="wax" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#f0c878"></stop>
+      <stop offset="30%" stop-color="#d4a858"></stop>
+      <stop offset="70%" stop-color="#a67828"></stop>
+      <stop offset="100%" stop-color="#7a5418"></stop>
+    </radialGradient>
+    
+    <radialGradient id="highlight" cx="35%" cy="28%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"></stop>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+    </radialGradient>
+    
+    <radialGradient id="rimshadow" cx="50%" cy="50%" r="50%">
+      <stop offset="88%" stop-color="#000" stop-opacity="0"></stop>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.3"></stop>
+    </radialGradient>
+  </defs>
+
+  
+  <g>
+    
+    <ellipse cx="102" cy="178" rx="62" ry="6" fill="#000" fill-opacity="0.25"></ellipse>
+
+    
+    <path d="M 100 22&#xA;             C 148 22, 178 52, 178 100&#xA;             C 178 132, 162 158, 140 170&#xA;             C 128 176, 118 178, 100 178&#xA;             C 72 178, 48 168, 32 144&#xA;             C 24 132, 22 116, 22 100&#xA;             C 22 52, 52 22, 100 22 Z" fill="url(#wax)"></path>
+
+    
+    <circle cx="100" cy="100" r="78" fill="url(#rimshadow)"></circle>
+
+    
+    <circle cx="100" cy="100" r="78" fill="url(#highlight)"></circle>
+
+    
+    <circle cx="100" cy="100" r="68" fill="none" stroke="#5c3e10" stroke-opacity="0.4" stroke-width="0.8" stroke-dasharray="1.5,2.5"></circle>
+
+    
+    <circle cx="100" cy="100" r="58" fill="none" stroke="#5c3e10" stroke-opacity="0.45" stroke-width="1.2"></circle>
+
+    
+    <g transform="translate(100 108)">
+      
+      <rect x="-22" y="-38" width="44" height="6" fill="#3a2808" rx="0.5"></rect>
+      
+      <rect x="-22" y="32" width="44" height="6" fill="#3a2808" rx="0.5"></rect>
+      
+      <rect x="-6" y="-32" width="12" height="64" fill="#3a2808"></rect>
+      
+      <rect x="-22" y="-38" width="4" height="10" fill="#3a2808"></rect>
+      <rect x="18" y="-38" width="4" height="10" fill="#3a2808"></rect>
+      
+      <rect x="-22" y="28" width="4" height="10" fill="#3a2808"></rect>
+      <rect x="18" y="28" width="4" height="10" fill="#3a2808"></rect>
+    </g>
+
+    
+    <g fill="#5c3e10" fill-opacity="0.55">
+      <circle cx="100" cy="38" r="1.6"></circle>
+      <circle cx="162" cy="100" r="1.6"></circle>
+      <circle cx="100" cy="162" r="1.6"></circle>
+      <circle cx="38" cy="100" r="1.6"></circle>
+    </g>
+  </g>
+</svg>
