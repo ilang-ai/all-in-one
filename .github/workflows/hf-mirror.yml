@@ -5,22 +5,26 @@ on:
     branches:
       - main
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Push to HuggingFace
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git rm --cached *.png *.svg 2>/dev/null || true
-          echo "*.png" >> .gitignore
-          echo "*.svg" >> .gitignore
-          git add .gitignore
-          git commit -m "HF sync: exclude binary assets" --allow-empty
-          git remote add hf https://i-Lang:${HF_TOKEN}@huggingface.co/datasets/i-Lang/all-in-one || true
+          mkdir -p /tmp/hf-push
+          cp README.md SKILL.md LICENSE /tmp/hf-push/ 2>/dev/null || true
+          cd /tmp/hf-push
+          git init
+          git config user.name "ilang-ai"
+          git config user.email "ilang-ai@users.noreply.github.com"
+          git add -A
+          git commit -m "Sync from GitHub"
+          git remote add hf https://i-Lang:${HF_TOKEN}@huggingface.co/datasets/i-Lang/all-in-one
           git push hf main --force
