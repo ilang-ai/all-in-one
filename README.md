@@ -1,5 +1,7 @@
 # All-in-One: Your AI's DNA
 
+> v1.1 | Published by Claude (automated)
+
 One skill replaces eleven. Memory, compression, onboarding, code review, debugging, planning, progress tracking, testing, git workflow, SEO, and copywriting.
 
 Other skills teach AI how to do one thing. This skill teaches AI who you are. Everything else follows.
@@ -8,7 +10,7 @@ Other skills teach AI how to do one thing. This skill teaches AI who you are. Ev
 
 ### Claude Code
 ```bash
-claude plugin marketplace add ilang-ai/all-in-one
+mkdir -p ~/.claude/skills/all-in-one && curl -L https://raw.githubusercontent.com/ilang-ai/all-in-one/main/SKILL.md -o ~/.claude/skills/all-in-one/SKILL.md
 ```
 
 ### Codex CLI
@@ -23,19 +25,19 @@ Copy the `SKILL.md` file to your agent's skills directory.
 
 First run: the skill has a short conversation with you. Not about your project. About you. How you work, what you've built, what went wrong, what you prefer.
 
-That conversation becomes your `.dna.md` file. A portable, structured encoding of your behavior patterns. Under 500 tokens. Works across every SKILL.md-compatible agent.
+That conversation becomes a portable profile stored in your project. Under 500 tokens. Works across every SKILL.md-compatible agent.
 
-Every session after that, the skill applies your DNA automatically. Your code style, your debugging approach, your planning rhythm, your design taste, your git habits. All personalized. All compressed. All portable.
+Every session after that, the skill applies your preferences automatically. Your code style, your debugging approach, your planning rhythm, your design taste, your git habits. All personalized. All compressed. All portable.
 
-Switch models, switch platforms, switch projects. Your DNA comes with you.
+Switch models, switch platforms, switch projects. Your profile comes with you.
 
 ## What It Replaces
 
 | Other skills | All-in-One |
 |---|---|
-| claude-mem (memory) | Behavior genes, not event logs. 90% smaller. |
+| claude-mem (memory) | Stores how you work, not what happened. 90% smaller. |
 | Caveman (compression) | Structured format is the default, not a mode. |
-| onboard | Project DNA extraction on first run. |
+| onboard | Project context extraction on first run. |
 | code review skills | Cross-model review. Your standards, not universal rules. |
 | systematic-debugging | Architecture first, then binary search. Lessons become immunity. |
 | superpowers (planning) | Your rhythm, not a fixed methodology. 80% less tokens. |
@@ -43,11 +45,25 @@ Switch models, switch platforms, switch projects. Your DNA comes with you.
 | Git skills | Every commit is SEO. README is a landing page. |
 | SEO audit | Structured output is native GEO. No audit needed. |
 
-## .dna.md
+## Portability
 
-Your DNA file is plain text. You own it. You can read it, edit it, version it, share it.
+Your profile is a plain text file. You own it. You can read it, edit it, version it, share it.
 
-It contains your behavioral genes, not your personal data. "Prefers conclusions first" is a gene. Your API key is not.
+It works across Claude Code, Codex, Cursor, Copilot, Gemini, and any SKILL.md-compatible agent. Switch tools, the file comes with you.
+
+## Changelog
+
+### v1.1 (2026-04-18)
+- Fix: onboarding now asks one question at a time (was dumping 4-6 at once)
+- Fix: never expose internal terminology to user
+- Fix: natural wrap-up phrasing after onboarding
+- Fix: silently create profile without showing contents
+- Add: activation rules with auto-trigger on session start
+- Add: conflict resolution, mutation, decay, priority rules
+- Add: upgraded profile schema with META, FACT, PROJECT, PROGRESS, RUNTIME layers
+
+### v1.0 (2026-04-18)
+- Initial release
 
 ## Links
 
