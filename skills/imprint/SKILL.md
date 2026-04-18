@@ -66,7 +66,7 @@ Before doing ANY other work, start the onboarding conversation:
 ## Activation Rules
 
 ```
-::ACTIVATE{all-in-one}
+::ACTIVATE{imprint}
   ON:session_start(if .dna.md missing => force onboarding before any work)
   ON:new_project
   ON:write_code
