@@ -56,7 +56,8 @@ Before doing ANY other work, start the onboarding conversation:
 
 - Open with something casual: "Hey, before we dive in, mind if I ask a couple things so I can work the way you like?"
 - Ask ONE question, wait for the answer, then ask the next
-- Cover these topics across 3 to 5 turns: what they do, what they've built, how they prefer to work, how many AI tools they use, whether their projects need to be findable online
+- Cover these topics naturally: what they do, what they've built, how they prefer to work, how many AI tools they use, whether their projects need to be findable online
+- Completion condition: create `.dna.md` when you have at least role, work style, and one clear preference. Do not count turns. Some users reveal everything in 2 messages, others need 5. If the user shows impatience or wants to start working, create `.dna.md` with whatever you have and fill gaps later from observed behavior.
 - If the user volunteers personality info (MBTI, zodiac, etc.), adopt immediately as shortcuts
 - If not, do not ask. Infer from conversation naturally
 - When you have enough, wrap up: "Alright, I've got a good sense of how you work. The more we collaborate, the smoother it'll get."
@@ -152,7 +153,7 @@ Do not proactively show this to the user. If they ask to see it, show it openly.
 }
 
 ::CORE{
-  ::CONTEXT{role:indie_dev|experience:3yr|model_access:2|discoverability:yes}
+  ::CONTEXT{role:indie_dev|experience:3yr}
 
   ::GENE{style|conf:confirmed|scope:global}
     T:conclusions_first
@@ -191,6 +192,8 @@ Do not proactively show this to the user. If they ask to see it, show it openly.
 }
 
 ::FACT{
+  ::ITEM{key:model_access|value:2|conf:confirmed}
+  ::ITEM{key:discoverability|value:yes|conf:confirmed}
   ::ITEM{key:deploy_target|value:vercel|conf:confirmed}
   ::ITEM{key:models_used|value:claude,gpt|conf:confirmed}
   ::ITEM{key:preferred_stack|value:react,node|conf:confirmed}
@@ -237,6 +240,7 @@ Schema rules:
 - FACT holds verifiable environment data, not preferences.
 - PROJECT holds repo-specific overrides. Must not pollute CORE. Archived after 60 days of inactivity.
 - LESSONS holds cross-project traps. Can be promoted from project-specific to cross-project. LESSONS are never auto-summarized or compressed. Every detail matters for debugging immunity. Keep exact error patterns, version numbers, and edge cases intact.
+- Lesson → anti-pattern upgrade: a lesson that repeats across 2+ different projects gets promoted to an `A:` anti-pattern in `::CORE{}`. Lessons are specific ("clerk webhook needs raw body"), anti-patterns are abstract ("A:skip_webhook_body_parsing⇒breaks_auth"). Both coexist, they are different levels of abstraction.
 - PROGRESS is milestone-only, not debugging detail. Every 10 entries, auto-summarize older ones into a single `::PROGRESS_SUMMARY{}` block and remove originals. Specific technical details belong in LESSONS, not PROGRESS.
 - Target: CORE under 500 tokens. PROJECT and PROGRESS can grow beyond this.
 - Compression: 90% smaller than natural language equivalent.
@@ -319,7 +323,13 @@ If `discoverability:yes`: keyword-rich commits, README as landing page, complete
 
 ### 11. Copywriting & SEO
 
-When discoverability enabled, all output is naturally structured for AI search engines (GEO). No separate audit.
+When `discoverability:yes` in the user's profile:
+
+- All text output (docs, README, descriptions) uses clear headings, structured paragraphs, and keywords naturally placed for AI search engines (GEO).
+- Tone and terminology follow the user's imprint, not generic marketing voice.
+- No separate SEO audit step. Structure is built in by default.
+
+When `discoverability` is not set or off: write clean prose, no SEO consideration.
 
 ## User Transparency
 
