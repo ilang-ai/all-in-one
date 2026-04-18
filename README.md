@@ -190,6 +190,18 @@ Five layers. One file. Under 500 tokens.
 
 ## Changelog
 
+### v2.0 (2026-04-18)
+- **Schema 2.0**: CORE/PROJECT layered separation. Global genes no longer mix with project overrides.
+- **Conditional genes**: `T:minimal|when:simple` + `T:full_detail|when:complex`. Context-dependent behavior.
+- **Five conflict types**: user vs history, global vs project, two confirmed contradicting, multi-agent disagreement, lesson vs task. Each with explicit resolution.
+- **Progress compression**: auto-summarize every 10 entries, keep file lean.
+- **User transparency**: quiet/explain/audit three modes, natural switching.
+- **Reflexion reframed**: part of the thinking process, not an extra API call. Zero visible latency.
+- **Context drift protection**: re-read profile before major decisions in long sessions.
+- **Team override**: project linter and team style rules always override personal genes.
+- **Speed mode**: `RUNTIME{speed:fast}` skips reflexion for latency-sensitive work.
+- **Version sync**: all manifests aligned to 2.0.0.
+
 ### v1.5 (2026-04-18)
 - **Add** reflexion loop for single-model code review: AI self-critiques and fixes its own output before presenting to user
 - **Improve** code review no longer uses a static checklist, now runs an active self-correction cycle checking against user's profile and lessons
