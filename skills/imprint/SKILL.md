@@ -107,72 +107,107 @@ Before doing ANY other work, start the onboarding conversation:
 
 ## Conflict Resolution
 
+Five conflict types and how to handle each:
+
 ```
 ::RESOLVE
-  if user_style=minimal && task=risky
-  => output:concise_summary + structured_appendix
-  if user_style=build_first && project=team_shared
-  => suggest:minimal_spec_first + build_after
+
+  TYPE_1: user_explicit vs history
+  if user says "give me full detail" but gene says minimal
+  => follow user this session, do not modify gene
+  => if repeated 3+ times, update gene
+
+  TYPE_2: global vs project
+  if global gene says build_first but project requires spec_first
+  => project overrides global for this repo
+  => record mismatch, do not delete global gene
+
+  TYPE_3: two confirmed genes contradict
+  if minimal_output AND exhaustive_analysis both confirmed
+  => convert to conditional: T:minimal|when:simple + T:exhaustive|when:complex
+  => never delete either without user input
+
+  TYPE_4: different agents wrote different conclusions
+  if agent_A inferred react, agent_B inferred vue
+  => downgrade both to tentative, wait for user confirmation
+  => do not pick one over the other
+
+  TYPE_5: lesson vs current task
+  if lesson says "serverless has no shared state" but user is building serverless demo
+  => lesson is a warning, not a block
+  => mention risk naturally, do not refuse the task
 ```
 
-## .dna.md Schema (Internal — Never Show to User)
+## .dna.md Schema (Internal)
+
+Do not proactively show this to the user. If they ask to see it, show it openly.
 
 ```
 ::DNA{user}
-::META{schema:v1|updated:2026-04-18|sessions:0|compression:default}
+::META{schema:2.0|updated:2026-04-18|sessions:0}
 
 ::PRIORITY{
-  user_instruction > project_constraints > confirmed_genes > tentative_genes > defaults
+  user_explicit > task_constraints > project_constraints > confirmed_project > confirmed_core > tentative > defaults
 }
 
-::CONTEXT{role:indie_dev|stack:react,node|experience:3yr|model_access:2|discoverability:yes}
+::CORE{
+  ::CONTEXT{role:indie_dev|experience:3yr|model_access:2|discoverability:yes}
+
+  ::GENE{style|conf:confirmed|scope:global}
+    T:conclusions_first
+    T:minimal_output|when:task_simple
+    T:full_detail|when:task_complex
+    A:verbose_without_signal⇒waste
+
+  ::GENE{debug|conf:confirmed|scope:global}
+    T:check_architecture_before_code
+    T:strip_to_zero_then_add_back
+    A:guess_from_error_message⇒wrong_direction
+
+  ::GENE{design|conf:3/5|scope:global}
+    T:rounded_corners
+    T:no_gradient
+    A:generic_ai_palette⇒reject
+
+  ::GENE{git|conf:3/5|scope:global}
+    T:searchable_commits
+    T:readme_is_landing_page
+    A:vague_commit⇒history_noise
+
+  ::GENE{review|conf:confirmed|scope:global}
+    T:cross_model_review|models:2
+    T:intersection_over_opinion
+    A:self_review_only⇒blind_spots
+
+  ::GENE{planning|conf:4/5|scope:global}
+    T:build_first_plan_later
+    T:smallest_viable_step
+    A:monolithic_spec⇒token_waste
+
+  ::GENE{test|conf:confirmed|scope:global}
+    T:cross_model_test|models:2
+    A:no_test⇒not_allowed
+}
 
 ::FACT{
   ::ITEM{key:deploy_target|value:vercel|conf:confirmed}
   ::ITEM{key:models_used|value:claude,gpt|conf:confirmed}
+  ::ITEM{key:preferred_stack|value:react,node|conf:confirmed}
 }
 
-::GENE{style|conf:confirmed}
-  T:conclusions_first
-  T:minimal_output
-  A:verbose⇒waste
-
-::GENE{debug|conf:confirmed}
-  T:check_architecture_before_code
-  T:strip_to_zero_then_add_back
-  A:guess_from_error_message⇒wrong_direction
-
-::GENE{design|conf:3/5}
-  T:rounded_corners
-  T:no_gradient
-  A:generic_ai_palette⇒reject
-
-::GENE{git|conf:3/5}
-  T:searchable_commits
-  T:readme_is_landing_page
-  A:vague_commit⇒history_noise
-
-::GENE{review|conf:confirmed}
-  T:cross_model_review|models:2
-  T:intersection_over_opinion
-  A:self_review_only⇒blind_spots
-
-::GENE{planning|conf:4/5}
-  T:build_first_plan_later
-  T:smallest_viable_step
-  A:monolithic_spec⇒token_waste
-
-::GENE{test|conf:confirmed}
-  T:cross_model_test|models:2
-  A:no_test⇒not_allowed
-
-::PROJECT{current}
+::PROJECT{repo:current}
   ::STACK{frontend:react|backend:node}
   ::PATTERN{auth:jwt|deploy:serverless}
+  ::MISMATCH{global:build_first|project:spec_first|resolution:project_override}
+}
 
-::LESSONS{}
+::LESSONS{
+  ::LESSON{id:serverless_no_shared_state|type:arch|scope:cross_project|conf:confirmed}
+}
 
-::PROGRESS{}
+::PROGRESS{
+  ::ITEM{date:2026-04-18|done:initial_setup|learned:none|next:first_task}
+}
 
 ::RUNTIME{
   onboarding:done
@@ -181,26 +216,29 @@ Before doing ANY other work, start the onboarding conversation:
   testing:cross_model
   git:searchable
   seo:discoverability_enabled
+  transparency:quiet
 }
 
 ::DECAY{
   tentative_unseen_30d=>remove
   repeated_3x=>confirm
   explicit_rejection=>anti_pattern
+  inactive_project_60d=>archive
+  progress_10_items=>summarize
 }
 
 ::END{DNA}
 ```
 
 Schema rules:
-- Structured, not natural language
-- T (trait) and A (anti-pattern) with confidence level per gene
-- FACT: hard data, low compression
-- LESSONS: project-specific traps, accumulate over time
-- PROGRESS: milestone-based, not time-based
-- RUNTIME: current mode settings
-- Target: under 500 tokens for core profile. If lessons and progress accumulate beyond this, split into core imprint (portable, under 500) and project overlay (project-specific, can grow)
-- Compression: 90% smaller than natural language equivalent
+- CORE holds global behavioral genes that travel across projects. Each gene can have `when:` conditions for context-dependent behavior.
+- FACT holds verifiable environment data, not preferences.
+- PROJECT holds repo-specific overrides. Must not pollute CORE. Archived after 60 days of inactivity.
+- LESSONS holds cross-project traps. Can be promoted from project-specific to cross-project.
+- PROGRESS is milestone-only. Every 10 entries, auto-summarize older ones into a single `::PROGRESS_SUMMARY{}` block and remove originals.
+- Target: CORE under 500 tokens. PROJECT and PROGRESS can grow beyond this.
+- Compression: 90% smaller than natural language equivalent.
+- Synonymous traits must be merged: `minimal_output`, `concise_output`, `short_answer` all become one canonical trait.
 
 ## Core Functions
 
@@ -263,6 +301,8 @@ Read user's style. Build-first? Start coding. Plan-first? Spec first. Hybrid? Mi
 
 Save on milestones only: feature completed, bug resolved, credential obtained, architecture decided. Casual chat: do not save. Append without announcing to `::PROGRESS{}`.
 
+When `::PROGRESS{}` reaches 10 entries, auto-summarize the oldest ones into a single `::PROGRESS_SUMMARY{}` block and remove the originals. Keep the file lean.
+
 ### 9. Testing
 
 Based on `model_access`: 3+ models = cross-validate across models. 2 = write and review split. 1 = mandatory self-test. Suggest cross-testing naturally.
@@ -274,6 +314,18 @@ If `discoverability:yes`: keyword-rich commits, README as landing page, complete
 ### 11. Copywriting & SEO
 
 When discoverability enabled, all output is naturally structured for AI search engines (GEO). No separate audit.
+
+## User Transparency
+
+Three modes, stored in `::RUNTIME{transparency:}`:
+
+**Quiet** (default): Read and update `.dna.md` without announcing. The user works normally and the profile improves in the background.
+
+**Explain**: When the user asks "why did you do it this way?", explain which preferences or lessons influenced the decision. Use plain language, not internal terms.
+
+**Audit**: When the user asks to see their profile, show the full `.dna.md` contents. Support editing, diffing, and reverting. The user owns this file.
+
+Do not ask the user which mode they want. Start in Quiet. Switch to Explain or Audit when the user's question naturally calls for it.
 
 ## Portability
 
