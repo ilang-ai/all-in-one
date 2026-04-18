@@ -26,7 +26,7 @@ license: mit
 ### One skill replaces eleven. Portable across every agent.
 
 [![License](https://img.shields.io/badge/License-MIT-1e3a8a?style=for-the-badge)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.2-d4a858?style=for-the-badge)](#changelog)
+[![Version](https://img.shields.io/badge/version-1.3-d4a858?style=for-the-badge)](#changelog)
 [![Skill Standard](https://img.shields.io/badge/SKILL.md-compatible-0b0f1a?style=for-the-badge&labelColor=d4a858)](https://github.com/ilang-ai/all-in-one)
 [![Agents](https://img.shields.io/badge/19%20agents-supported-0b0f1a?style=for-the-badge)](https://github.com/ilang-ai/all-in-one#compatibility)
 
@@ -44,29 +44,24 @@ license: mit
 
 ## Install
 
-### From official marketplace (after approval)
+### Claude Code (recommended)
 
 ```
-/plugin install all-in-one@claude-plugins-official
-```
-
-### Manual install
-
-```bash
-git clone https://github.com/ilang-ai/all-in-one.git ~/.claude/plugins/all-in-one
-```
-
-### Test locally
-
-```bash
-git clone https://github.com/ilang-ai/all-in-one.git
-claude --plugin-dir ./all-in-one
+/plugin marketplace add ilang-ai/all-in-one
+/plugin install all-in-one@ilang-skills
 ```
 
 ### Codex CLI
 
 ```bash
 npx skills add ilang-ai/all-in-one
+```
+
+### Manual test
+
+```bash
+git clone https://github.com/ilang-ai/all-in-one.git
+claude --plugin-dir ./all-in-one
 ```
 
 ### Any SKILL.md-compatible agent
@@ -167,6 +162,12 @@ Five layers. One file. Under 500 tokens.
 ---
 
 ## Changelog
+
+### v1.3 (2026-04-18)
+- **Add** plugin manifest (`.claude-plugin/plugin.json`) for official marketplace submission
+- **Add** marketplace catalog (`.claude-plugin/marketplace.json`) for self-distribution
+- **Move** SKILL.md to `skills/all-in-one/SKILL.md` per plugin spec
+- **Update** install instructions for plugin format
 
 ### v1.2 (2026-04-18)
 - **Fix** enforce *one question per message* with explicit forbidden/correct examples

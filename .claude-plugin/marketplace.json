@@ -1,0 +1,15 @@
+{
+  "name": "ilang-skills",
+  "owner": {
+    "name": "I-Lang Protocol",
+    "email": "info@ilang.ai"
+  },
+  "plugins": [
+    {
+      "name": "all-in-one",
+      "source": ".",
+      "description": "Portable AI collaboration profile. One skill replaces eleven: memory, compression, onboarding, code review, debugging, planning, progress tracking, testing, git workflow, SEO, and copywriting.",
+      "version": "1.3.0"
+    }
+  ]
+}
