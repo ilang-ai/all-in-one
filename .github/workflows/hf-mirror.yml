@@ -17,5 +17,10 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          git rm --cached *.png *.svg 2>/dev/null || true
+          echo "*.png" >> .gitignore
+          echo "*.svg" >> .gitignore
+          git add .gitignore
+          git commit -m "HF sync: exclude binary assets" --allow-empty
           git remote add hf https://i-Lang:${HF_TOKEN}@huggingface.co/datasets/i-Lang/all-in-one || true
           git push hf main --force
