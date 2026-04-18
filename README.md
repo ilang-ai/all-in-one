@@ -44,12 +44,23 @@ license: mit
 
 ## Install
 
-### Claude Code
+### From official marketplace (after approval)
+
+```
+/plugin install all-in-one@claude-plugins-official
+```
+
+### Manual install
 
 ```bash
-mkdir -p ~/.claude/skills/all-in-one && \
-curl -L https://raw.githubusercontent.com/ilang-ai/all-in-one/main/SKILL.md \
-  -o ~/.claude/skills/all-in-one/SKILL.md
+git clone https://github.com/ilang-ai/all-in-one.git ~/.claude/plugins/all-in-one
+```
+
+### Test locally
+
+```bash
+git clone https://github.com/ilang-ai/all-in-one.git
+claude --plugin-dir ./all-in-one
 ```
 
 ### Codex CLI
@@ -60,7 +71,7 @@ npx skills add ilang-ai/all-in-one
 
 ### Any SKILL.md-compatible agent
 
-Drop `SKILL.md` into your agent's skills directory. That's it.
+Copy `skills/all-in-one/SKILL.md` into your agent's skills directory.
 
 ---
 
