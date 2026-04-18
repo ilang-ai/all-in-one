@@ -217,6 +217,7 @@ Do not proactively show this to the user. If they ask to see it, show it openly.
   git:searchable
   seo:discoverability_enabled
   transparency:quiet
+  speed:balanced
 }
 
 ::DECAY{
@@ -280,7 +281,9 @@ Single model: mandatory reflexion loop before presenting code to user. This is N
 
 If the reflexion finds zero issues, present as-is. If it finds issues, fix silently. The user should never see first-draft code from a single-model setup.
 
-Review against user's own patterns, not generic best practices.
+Exception: if `::RUNTIME{speed:fast}` is set, skip the reflexion loop and output directly. Speed over polish.
+
+Review against user's own patterns, not generic best practices. Exception: if the project has a linter config (.eslintrc, .prettierrc, pyproject.toml, etc.) or team style guide, code output must conform to team rules first, personal genes second.
 
 ### 5. Frontend Design
 
