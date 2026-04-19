@@ -31,7 +31,7 @@ license: mit
 [![License](https://img.shields.io/badge/License-MIT-1e3a8a?style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/badge/version-2.1-d4a858?style=for-the-badge)](#changelog)
 [![Skill Standard](https://img.shields.io/badge/SKILL.md-compatible-0b0f1a?style=for-the-badge&labelColor=d4a858)](https://github.com/ilang-ai/Imprint)
-[![Agents](https://img.shields.io/badge/19%20agents-supported-0b0f1a?style=for-the-badge)](https://github.com/ilang-ai/Imprint#compatibility)
+[![Agents](https://img.shields.io/badge/11%20agents-compatible-0b0f1a?style=for-the-badge)](https://github.com/ilang-ai/Imprint#compatibility)
 
 </div>
 
@@ -71,37 +71,16 @@ taste, your git habits. Portable across any SKILL.md-compatible agent.
 
 ## Install
 
-### Claude Code (recommended)
+### Any SKILL.md-compatible agent (universal)
 
-```
-/plugin marketplace add ilang-ai/Imprint
-/plugin install imprint@ilang-plugins
-```
-
-### Codex CLI
+Copy `skills/imprint/SKILL.md` into your agent's skills directory. Works with Claude Code, Cursor, Copilot, Windsurf, Trae, Cline, Roo, and any agent that reads SKILL.md files.
 
 ```bash
-npx skills add ilang-ai/Imprint
+git clone https://github.com/ilang-ai/Imprint.git
+cp Imprint/skills/imprint/SKILL.md ~/.claude/skills/imprint/SKILL.md
 ```
 
-### Cursor
-
-```
-/add-plugin ilang-ai/Imprint
-```
-
-### Gemini CLI
-
-```bash
-gemini extensions install https://github.com/ilang-ai/Imprint
-```
-
-### VS Code / VS Code forks
-
-Search "Imprint" in the Extensions panel, or:
-
-- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
-- [Open VSX](https://open-vsx.org/extension/ILang/imprint)
+Replace `~/.claude/skills/` with your agent's skills path.
 
 ### Hermes Agent
 
@@ -109,16 +88,13 @@ Search "Imprint" in the Extensions panel, or:
 hermes skills install ilang-ai/Imprint
 ```
 
-### Manual test
+### VS Code / VS Code forks
 
-```bash
-git clone https://github.com/ilang-ai/Imprint.git
-claude --plugin-dir ./Imprint
-```
+Search "Imprint" in the Extensions panel, or:
 
-### Any SKILL.md-compatible agent
+- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
 
-Copy `skills/imprint/SKILL.md` into your agent's skills directory.
+The VS Code extension auto-installs SKILL.md to 14 agent directories on your machine.
 
 ---
 
@@ -148,23 +124,23 @@ Imprint covers ground that these skills address individually. Not a drop-in repl
 
 <div align="center">
 
-| Agent           | Support    | Install                    |
-| :-------------- | :--------: | :------------------------- |
-| **Claude Code** | native     | `/plugin marketplace add`  |
-| **Codex CLI**   | native     | `npx skills add`           |
-| **Cursor**      | native     | `/add-plugin` or skills dir|
-| **Gemini CLI**  | native     | `gemini extensions install`|
-| **Hermes**      | native     | `hermes skills install`    |
-| **VS Code**     | extension  | VS Code Marketplace        |
-| **Copilot**     | SKILL.md   | drop in skills dir         |
-| **Windsurf**    | SKILL.md   | drop in skills dir         |
-| **Trae**        | SKILL.md   | drop in skills dir         |
-| **Cline**       | SKILL.md   | drop in skills dir         |
-| **Roo**         | SKILL.md   | drop in skills dir         |
+| Agent           | Status       | Install                              |
+| :-------------- | :----------: | :----------------------------------- |
+| **Hermes**      | native       | `hermes skills install ilang-ai/Imprint` |
+| **VS Code**     | extension    | [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint) |
+| **Claude Code** | SKILL.md     | copy to `~/.claude/skills/imprint/`  |
+| **Cursor**      | SKILL.md     | copy to `~/.cursor/skills/imprint/`  |
+| **Codex CLI**   | SKILL.md     | copy to `~/.codex/skills/imprint/`   |
+| **Copilot**     | SKILL.md     | copy to `~/.github/skills/imprint/`  |
+| **Gemini CLI**  | SKILL.md     | copy to `~/.gemini/extensions/imprint/skills/imprint/` |
+| **Windsurf**    | SKILL.md     | copy to `~/.windsurf/skills/imprint/`|
+| **Trae**        | SKILL.md     | copy to `~/.trae/skills/imprint/`    |
+| **Cline**       | SKILL.md     | copy to `~/.cline/skills/imprint/`   |
+| **Roo**         | SKILL.md     | copy to `~/.roo/skills/imprint/`     |
 
 </div>
 
-**native** = dedicated plugin/extension manifest. **SKILL.md** = compatible via the open Agent Skills standard. Any agent that reads SKILL.md files can load Imprint.
+**native** = one-command install from the platform's skill registry. **extension** = VS Code extension with auto-install to 14 agent directories. **SKILL.md** = copy the file to the agent's skills directory.
 
 ---
 
@@ -318,9 +294,8 @@ human-readable, those are the two hard constraints.
 
 - [ilang.ai](https://ilang.ai)
 - [GitHub](https://github.com/ilang-ai/Imprint)
-- [skills.sh](https://skills.sh/ilang-ai/Imprint/imprint)
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
-- [Open VSX](https://open-vsx.org/extension/ILang/imprint)
+- [skills.sh](https://skills.sh/ilang-ai/Imprint/imprint)
 - [Hugging Face](https://huggingface.co/i-Lang/Imprint)
 - [SKILL.md spec](https://github.com/ilang-ai/ilang-spec)
 
