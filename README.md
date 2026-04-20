@@ -98,6 +98,7 @@ Search "Imprint" in the Extensions panel, or:
 
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
 - [Open VSX](https://open-vsx.org/extension/ILang/imprint)
+- [Open VSX](https://open-vsx.org/extension/ILang/imprint)
 
 The VS Code extension auto-installs SKILL.md to 14 agent directories on your machine.
 
