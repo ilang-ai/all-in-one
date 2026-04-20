@@ -88,6 +88,10 @@ Replace `~/.claude/skills/` with your agent's skills path.
 hermes skills install ilang-ai/Imprint
 ```
 
+### Cursor
+
+Browse and install from [Cursor Directory](https://cursor.directory/plugins/imprint).
+
 ### VS Code / VS Code forks
 
 Search "Imprint" in the Extensions panel, or:
@@ -129,7 +133,7 @@ Imprint covers ground that these skills address individually. Not a drop-in repl
 | **Hermes**      | native       | `hermes skills install ilang-ai/Imprint` |
 | **VS Code**     | extension    | [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint) |
 | **Claude Code** | SKILL.md     | copy to `~/.claude/skills/imprint/`  |
-| **Cursor**      | SKILL.md     | copy to `~/.cursor/skills/imprint/`  |
+| **Cursor**      | directory    | [Cursor Directory](https://cursor.directory/plugins/imprint) |
 | **Codex CLI**   | SKILL.md     | copy to `~/.codex/skills/imprint/`   |
 | **Copilot**     | SKILL.md     | copy to `~/.github/skills/imprint/`  |
 | **Gemini CLI**  | SKILL.md     | copy to `~/.gemini/extensions/imprint/skills/imprint/` |
@@ -140,7 +144,7 @@ Imprint covers ground that these skills address individually. Not a drop-in repl
 
 </div>
 
-**native** = one-command install from the platform's skill registry. **extension** = VS Code extension with auto-install to 14 agent directories. **SKILL.md** = copy the file to the agent's skills directory.
+**native** = one-command install from the platform's skill registry. **directory** = listed in the platform's plugin directory. **extension** = VS Code extension with auto-install to 14 agent directories. **SKILL.md** = copy the file to the agent's skills directory.
 
 ---
 
@@ -295,6 +299,7 @@ human-readable, those are the two hard constraints.
 - [ilang.ai](https://ilang.ai)
 - [GitHub](https://github.com/ilang-ai/Imprint)
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
+- [Cursor Directory](https://cursor.directory/plugins/imprint)
 - [skills.sh](https://skills.sh/ilang-ai/Imprint/imprint)
 - [Hugging Face](https://huggingface.co/i-Lang/Imprint)
 - [SKILL.md spec](https://github.com/ilang-ai/ilang-spec)
