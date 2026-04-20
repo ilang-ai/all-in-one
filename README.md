@@ -97,6 +97,7 @@ Browse and install from [Cursor Directory](https://cursor.directory/plugins/impr
 Search "Imprint" in the Extensions panel, or:
 
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
+- [Open VSX](https://open-vsx.org/extension/ILang/imprint)
 
 The VS Code extension auto-installs SKILL.md to 14 agent directories on your machine.
 
@@ -299,6 +300,7 @@ human-readable, those are the two hard constraints.
 - [ilang.ai](https://ilang.ai)
 - [GitHub](https://github.com/ilang-ai/Imprint)
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ILang.imprint)
+- [Open VSX](https://open-vsx.org/extension/ILang/imprint)
 - [Cursor Directory](https://cursor.directory/plugins/imprint)
 - [skills.sh](https://skills.sh/ilang-ai/Imprint/imprint)
 - [Hugging Face](https://huggingface.co/i-Lang/Imprint)
