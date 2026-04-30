@@ -32,6 +32,7 @@ license: mit
 [![Version](https://img.shields.io/badge/version-2.1-d4a858?style=for-the-badge)](#changelog)
 [![Skill Standard](https://img.shields.io/badge/SKILL.md-compatible-0b0f1a?style=for-the-badge&labelColor=d4a858)](https://github.com/ilang-ai/Imprint)
 [![Agents](https://img.shields.io/badge/11%20agents-compatible-0b0f1a?style=for-the-badge)](https://github.com/ilang-ai/Imprint#compatibility)
+[![I-Lang L2](https://img.shields.io/badge/I--Lang-L2_Compatible-d4a858?style=for-the-badge)](https://github.com/ilang-ai/ilang-spec)
 
 </div>
 
