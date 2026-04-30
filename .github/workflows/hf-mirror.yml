@@ -25,7 +25,7 @@ jobs:
 
           # Add HF dataset card metadata before README
           printf '%s\n' '---' 'license: mit' 'tags:' '  - ai-agent' '  - behavioral-dna' '  - i-lang' '  - ilang-protocol' '  - personality' '  - developer-tools' 'pretty_name: Imprint - AI Behavioral DNA Protocol' 'configs:' '  - config_name: default' '    data_files:' '      - split: train' '        path: data/*.jsonl' '---' '' > /tmp/hf-push/README.md
-          cat README.md >> /tmp/hf-push/README.md
+          awk '/^---$/{c++; next} c>=2' README.md >> /tmp/hf-push/README.md
           cd /tmp/hf-push
           git init -b main
           git config user.name "ilang-ai"
